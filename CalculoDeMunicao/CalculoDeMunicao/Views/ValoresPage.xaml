@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="CalculoDeMunicao.Views.ValoresPage"
+             Visual="Material">
+
+    <NavigationPage.TitleView>
+        <Label Text="{Binding Title}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+    </NavigationPage.TitleView>
+
+    <ScrollView>
+
+        <StackLayout Margin="15">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Descrição" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
+                <Label Text="Quantidade" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
+                <Label Text="Valor Total" Grid.Row="0" Grid.Column="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
+                
+                <Label Text="Espoleta:" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Medium" TextColor="Black"/>
+                <Label Text="Estojo:" Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Medium" TextColor="Black"/>
+                <Label Text="Pólvora (1Kg):" Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Medium" TextColor="Black"/>
+                <Label Text="Projétil:" Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Medium" TextColor="Black"/>
+                <Label Text="Outros:" Grid.Row="5" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Medium" TextColor="Black"/>
+
+                <Entry Grid.Row="1" Grid.Column="1" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Qtd" x:Name="QuantidadeTotalDeEspoleta"/>
+                <Entry Grid.Row="2" Grid.Column="1" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Qtd" x:Name="QuantidadeTotalDeEstojo"/>
+                <Entry Grid.Row="3" Grid.Column="1" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Qtd" x:Name="QuantidadeTotalDePolvora"/>
+                <Entry Grid.Row="4" Grid.Column="1" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Qtd" x:Name="QuantidadeTotalDeProjetil"/>
+                <Entry Grid.Row="5" Grid.Column="1" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Qtd" x:Name="QuantidadeTotalDeOutros"/>
+
+                <Entry Grid.Row="1" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="R$" x:Name="ValorTotalDeEspoleta"/>
+                <Entry Grid.Row="2" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="R$" x:Name="ValorTotalDeEstojo"/>
+                <Entry Grid.Row="3" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="R$" x:Name="ValorTotalDePolvora"/>
+                <Entry Grid.Row="4" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="R$" x:Name="ValorTotalDeProjetil"/>
+                <Entry Grid.Row="5" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="R$" x:Name="ValorTotalDeOutros"/>
+
+            </Grid>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,30,0,0">
+                <Button Text="Salvar" BackgroundColor="Green" Clicked="ButtonSalvar_Clicked"/>
+                <Button Text="Limpar Campos" BackgroundColor="Red" Clicked="ButtonLimparCampos_Clicked"/>
+            </StackLayout>
+
+        </StackLayout>
+
+    </ScrollView>
+    
+</ContentPage>

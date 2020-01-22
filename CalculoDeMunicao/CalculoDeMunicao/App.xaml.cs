@@ -23,13 +23,15 @@ namespace CalculoDeMunicao
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("TabbedMenu");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<TabbedMenu, TabbedMenuViewModel>();
+            containerRegistry.RegisterForNavigation<CalculadoraDeMunicaoPage, CalculadoraDeMunicaoViewModel>();
+            containerRegistry.RegisterForNavigation<ValoresPage, ValoresPageViewModel>();
         }
     }
 }
