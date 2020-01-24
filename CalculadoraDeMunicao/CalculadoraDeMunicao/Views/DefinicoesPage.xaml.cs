@@ -7,14 +7,19 @@ using Xamarin.Essentials;
 using Plugin.Permissions.Abstractions;
 using Plugin.Permissions;
 using System.Threading.Tasks;
+using CalculadoraDeMunicao.Interfaces;
 
 namespace CalculadoraDeMunicao.Views
 {
     public partial class DefinicoesPage : ContentPage
     {
+
+        public IGerenciadorDeArquivo GerenciadorDeArquivo { get; }
+
         public DefinicoesPage()
         {
             InitializeComponent();
+            GerenciadorDeArquivo = DependencyService.Get<IGerenciadorDeArquivo>();
         }
 
         private void ButtonLimparCampos_Clicked(object sender, System.EventArgs e)
@@ -32,7 +37,7 @@ namespace CalculadoraDeMunicao.Views
             ValorTotalDeOutros.Text = "";
         }
 
-        private void ButtonSalvar_Clicked(object sender, System.EventArgs e)
+        private async void ButtonSalvar_Clicked(object sender, System.EventArgs e)
         {
             try
             {
@@ -96,15 +101,13 @@ namespace CalculadoraDeMunicao.Views
                 string nomeDoArquivo = "valoresDeMunicao.json";
                 string caminhoDoArquivo = Path.Combine(FileSystem.AppDataDirectory, nomeDoArquivo);
 
-                var status = CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
+                await GerenciadorDeArquivo.SalvarArquivo(caminhoDoArquivo, precoDasMunicoes.ToString());
 
-                File.WriteAllText(caminhoDoArquivo, precoDasMunicoes.ToString());
-
-                DisplayAlert("Dados Cadastrados com Sucesso!", AlertMessageSuccess(espoleta.QuantidadeTotal, espoleta.ValorTotal, estojo.QuantidadeTotal, estojo.ValorTotal, polvora.QuantidadeTotal, polvora.ValorTotal, projetil.QuantidadeTotal, projetil.ValorTotal, outros.QuantidadeTotal, outros.ValorTotal), "OK");
+                await DisplayAlert("Dados Cadastrados com Sucesso!", AlertMessageSuccess(espoleta.QuantidadeTotal, espoleta.ValorTotal, estojo.QuantidadeTotal, estojo.ValorTotal, polvora.QuantidadeTotal, polvora.ValorTotal, projetil.QuantidadeTotal, projetil.ValorTotal, outros.QuantidadeTotal, outros.ValorTotal), "OK");
             }
             catch (Exception)
             {
-                DisplayAlert("Preenchimento Inválido!", "Todos os campos devem ser preenchidos corretamente.", "OK");
+                await DisplayAlert("Preenchimento Inválido!", "Todos os campos devem ser preenchidos corretamente.", "OK");
             }
 
         }
@@ -118,6 +121,5 @@ namespace CalculadoraDeMunicao.Views
                     "Outros - Qtd: " + quantidadeTotalOutros + " | R$ " + valorTotalOutros + "\n";
         }
 
-        private async Task SolicitaPermissão() => await CrossPermissions.Current.RequestPermissionsAsync(Permission.Storage);
     }
 }
