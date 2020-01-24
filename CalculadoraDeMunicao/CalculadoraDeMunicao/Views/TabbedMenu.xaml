@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="http://prismlibrary.com"
+            prism:ViewModelLocator.AutowireViewModel="True"
+            x:Class="CalculadoraDeMunicao.Views.TabbedMenu"
+            xmlns:local="clr-namespace:CalculadoraDeMunicao.Views;assembly=CalculadoraDeMunicao"
+            Visual="Material">
+
+    <NavigationPage Title="Calculadora" IconImageSource="iconeCalculadora.png">
+        <x:Arguments>
+            <local:CalculadoraPage />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="Definições" IconImageSource="iconeDefinicoes.png">
+        <x:Arguments>
+            <local:DefinicoesPage />
+        </x:Arguments>
+    </NavigationPage>
+    
+</TabbedPage>
