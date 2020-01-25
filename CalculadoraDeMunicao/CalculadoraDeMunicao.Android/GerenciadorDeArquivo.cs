@@ -10,22 +10,29 @@ namespace CalculadoraDeMunicao.Droid
 {
     public class GerenciadorDeArquivo : IGerenciadorDeArquivo
     {
-        public async Task<string> LerArquivo(string caminhoDoArquivo, string nomeDoArquivo)
+        public async Task<string> LerArquivo()
         {
-            var caminhoCompleto = Path.Combine(caminhoDoArquivo, nomeDoArquivo);
-            using var stream = new StreamReader(caminhoCompleto);
-            return await stream.ReadToEndAsync();
-        }
-
-        public async Task SalvarArquivo(string nomeDoArquivo, string conteudoDoArquivo)
-        {
+            string nomeDoArquivo = "municoes.json";
             var caminhoPastaPessoal = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var caminhoCompleto = Path.Combine(caminhoPastaPessoal, nomeDoArquivo);
-            using var stream = new StreamWriter(caminhoCompleto, false)
+
+            using (var stream = new StreamReader(caminhoCompleto))
             {
-                AutoFlush = true
-            };
-            await stream.WriteAsync(conteudoDoArquivo);
+                return await stream.ReadToEndAsync();
+            }
+        }
+
+        public async Task SalvarArquivo(string conteudoDoArquivo)
+        {
+            string nomeDoArquivo = "municoes.json";
+            var caminhoPastaPessoal = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var caminhoCompleto = Path.Combine(caminhoPastaPessoal, nomeDoArquivo);
+            
+            using (var stream = new StreamWriter(caminhoCompleto, false))
+            {
+                stream.AutoFlush = true;
+                await stream.WriteAsync(conteudoDoArquivo);
+            }
         }
     }
 }

@@ -98,10 +98,7 @@ namespace CalculadoraDeMunicao.Views
                     new JProperty("ValorUnitárioDeOutros", outros.ValorUnitário)
                 );
 
-                string nomeDoArquivo = "valoresDeMunicao.json";
-                string caminhoDoArquivo = Path.Combine(FileSystem.AppDataDirectory, nomeDoArquivo);
-
-                await GerenciadorDeArquivo.SalvarArquivo(caminhoDoArquivo, precoDasMunicoes.ToString());
+                await GerenciadorDeArquivo.SalvarArquivo(precoDasMunicoes.ToString());
 
                 await DisplayAlert("Dados Cadastrados com Sucesso!", AlertMessageSuccess(espoleta.QuantidadeTotal, espoleta.ValorTotal, estojo.QuantidadeTotal, estojo.ValorTotal, polvora.QuantidadeTotal, polvora.ValorTotal, projetil.QuantidadeTotal, projetil.ValorTotal, outros.QuantidadeTotal, outros.ValorTotal), "OK");
             }
@@ -114,12 +111,16 @@ namespace CalculadoraDeMunicao.Views
 
         private string AlertMessageSuccess(int quantidadeTotalEspoleta, double valorTotalEspoleta, int quantidadeTotalEstojo, double valorTotalEstojo, int quantidadeTotalPolvora, double valorTotalPolvora, int quantidadeTotalProjetil, double valorTotalProjetil, int quantidadeTotalOutros, double valorTotalOutros)
         {
-            return "Espoleta - Qtd: " + quantidadeTotalEspoleta + " | R$ " + valorTotalEspoleta + "\n" +
-                    "Estojo - Qtd: " + quantidadeTotalEstojo + " | R$ " + valorTotalEstojo + "\n" +
-                    "Pólvora - Qtd: " + quantidadeTotalPolvora + " | R$ " + valorTotalPolvora + "\n" +
-                    "Projétil - Qtd: " + quantidadeTotalProjetil + " | R$ " + valorTotalProjetil + "\n" +
-                    "Outros - Qtd: " + quantidadeTotalOutros + " | R$ " + valorTotalOutros + "\n";
+            return "Quantidade de Espoleta: " + quantidadeTotalEspoleta + " | Valor Total R$ " + valorTotalEspoleta + "\n" +
+                    "Quantidade de Estojo: " + quantidadeTotalEstojo + " | Valor Total R$ " + valorTotalEstojo + "\n" +
+                    "Quantidade de Pólvora: " + quantidadeTotalPolvora + " | Valor Total R$ " + valorTotalPolvora + "\n" +
+                    "Quantidade de Projétil: " + quantidadeTotalProjetil + " | Valor Total R$ " + valorTotalProjetil + "\n" +
+                    "Quantidade de Outros: " + quantidadeTotalOutros + " | Valor Total R$ " + valorTotalOutros + "\n";
         }
 
+        private async void ButtonMostrarDados_Clicked(object sender, EventArgs e)
+        {
+            CampoDeTexto.Text = await GerenciadorDeArquivo.LerArquivo();
+        }
     }
 }

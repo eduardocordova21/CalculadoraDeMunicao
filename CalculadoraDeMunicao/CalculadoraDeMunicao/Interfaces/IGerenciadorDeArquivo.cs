@@ -5,8 +5,8 @@ namespace CalculadoraDeMunicao.Interfaces
 {
     public interface IGerenciadorDeArquivo
     {
-        Task SalvarArquivo(string nomeDoArquivo, string conteudoDoArquivo);
+        Task SalvarArquivo(string conteudoDoArquivo);
 
-        Task<string> LerArquivo(string caminhoDoArquivo, string nomeDoArquivo);
+        Task<string> LerArquivo();
     }
 }

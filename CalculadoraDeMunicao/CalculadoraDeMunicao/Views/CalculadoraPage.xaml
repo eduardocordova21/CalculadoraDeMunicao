@@ -7,7 +7,7 @@
              Visual="Material">
 
     <NavigationPage.TitleView>
-        <Label Text="{Binding Title}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+        <Label Text="{Binding Title}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Title"/>
     </NavigationPage.TitleView>
 
     <StackLayout Margin="15">
@@ -30,7 +30,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Text="Valor Unitário" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
-            <Label Text="Quantidade" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
+            <Label Text="Quantidade Unitária" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
             <Label Text="Valor por Recarga" Grid.Row="0" Grid.Column="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
 
             <Entry Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$"/>
@@ -45,11 +45,11 @@
             <Entry Grid.Row="4" Grid.Column="1" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Projétil"/>
             <Entry Grid.Row="5" Grid.Column="1" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Outros"/>
 
-            <Entry Grid.Row="1" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="R$"/>
-            <Entry Grid.Row="2" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="R$"/>
-            <Entry Grid.Row="3" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="R$"/>
-            <Entry Grid.Row="4" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="R$"/>
-            <Entry Grid.Row="5" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="R$"/>
+            <Entry Grid.Row="1" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$"/>
+            <Entry Grid.Row="2" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$"/>
+            <Entry Grid.Row="3" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$"/>
+            <Entry Grid.Row="4" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$"/>
+            <Entry Grid.Row="5" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$"/>
 
         </Grid>
 
