@@ -37,7 +37,7 @@
                 
                 <Label Text="Espoleta:" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Title" TextColor="Black"/>
                 <Label Text="Estojo:" Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Title" TextColor="Black"/>
-                <Label Text="Pólvora (1Kg):" Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Title" TextColor="Black"/>
+                <Label Text="Pólvora (gramas):" Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Title" TextColor="Black"/>
                 <Label Text="Projétil:" Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Title" TextColor="Black"/>
                 <Label Text="Outros:" Grid.Row="5" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Title" TextColor="Black"/>
 

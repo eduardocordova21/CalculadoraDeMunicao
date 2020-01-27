@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace CalculadoraDeMunicao.Interfaces
 {
@@ -7,6 +6,6 @@ namespace CalculadoraDeMunicao.Interfaces
     {
         Task SalvarArquivo(string conteudoDoArquivo);
 
-        Task<string> LerArquivo();
+        string LerArquivo();
     }
 }
