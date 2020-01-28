@@ -10,9 +10,7 @@ namespace CalculadoraDeMunicao.Droid
 {
     public class GerenciadorDeArquivo : IGerenciadorDeArquivo
     {
-        private readonly string nomeDoArquivo = "municoes.json";
-
-        public string LerArquivo()
+        public string LerArquivo(string nomeDoArquivo)
         {
             var caminhoPastaPessoal = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var caminhoCompleto = Path.Combine(caminhoPastaPessoal, nomeDoArquivo);
@@ -23,7 +21,7 @@ namespace CalculadoraDeMunicao.Droid
             }
         }
 
-        public async Task SalvarArquivo(string conteudoDoArquivo)
+        public async Task SalvarArquivo(string nomeDoArquivo, string conteudoDoArquivo)
         {
             var caminhoPastaPessoal = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var caminhoCompleto = Path.Combine(caminhoPastaPessoal, nomeDoArquivo);

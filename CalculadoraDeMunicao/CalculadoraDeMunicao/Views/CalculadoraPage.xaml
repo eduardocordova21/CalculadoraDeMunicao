@@ -4,56 +4,67 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="CalculadoraDeMunicao.Views.CalculadoraPage"
-             Visual="Material"
-             IsVisible="True">
+             Visual="Material">
 
     <NavigationPage.TitleView>
         <Label Text="{Binding Title}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Title"/>
     </NavigationPage.TitleView>
 
-    <StackLayout Margin="15" x:Name="GridDeDados">
+    <ScrollView>
 
-        <Grid>
+        <StackLayout Margin="15">
 
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+            <Grid x:Name="GridDeDados">
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-            <Label Text="Valor Unitário" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
-            <Label Text="Quantidade Unitária" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
-            <Label Text="Valor por Recarga" Grid.Row="0" Grid.Column="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <Entry Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$" x:Name="ValorUnitarioDeEspoletaEntry"/>
-            <Entry Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$" x:Name="ValorUnitarioDeEstojosEntry"/>
-            <Entry Grid.Row="3" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$" x:Name="ValorUnitarioDePolvoraEntry"/>
-            <Entry Grid.Row="4" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$" x:Name="ValorUnitarioDeProjetilEntry"/>
-            <Entry Grid.Row="5" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$" x:Name="ValorUnitarioDeOutrosEntry"/>
+                <Label Text="Valor Unitário" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
+                <Label Text="Quantidade Unitária" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
+                <Label Text="Valor por Recarga" Grid.Row="0" Grid.Column="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
 
-            <Entry Grid.Row="1" Grid.Column="1" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Espoleta"/>
-            <Entry Grid.Row="2" Grid.Column="1" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Estojo"/>
-            <Entry Grid.Row="3" Grid.Column="1" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Pólvora"/>
-            <Entry Grid.Row="4" Grid.Column="1" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Projétil"/>
-            <Entry Grid.Row="5" Grid.Column="1" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Outros"/>
+                <Entry Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$" x:Name="ValorUnitarioDeEspoletaEntry"/>
+                <Entry Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$" x:Name="ValorUnitarioDeEstojosEntry"/>
+                <Entry Grid.Row="3" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$" x:Name="ValorUnitarioDePolvoraEntry"/>
+                <Entry Grid.Row="4" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$" x:Name="ValorUnitarioDeProjetilEntry"/>
+                <Entry Grid.Row="5" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$" x:Name="ValorUnitarioDeOutrosEntry"/>
 
-            <Entry Grid.Row="1" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$"/>
-            <Entry Grid.Row="2" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$"/>
-            <Entry Grid.Row="3" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$"/>
-            <Entry Grid.Row="4" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$"/>
-            <Entry Grid.Row="5" Grid.Column="2" Keyboard="Numeric" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$"/>
+                <Entry Grid.Row="1" Grid.Column="1" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Espoleta" x:Name="QuantidadeUnitáriaDeEspoleta"/>
+                <Entry Grid.Row="2" Grid.Column="1" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Estojo" x:Name="QuantidadeUnitáriaDeEstojo"/>
+                <Entry Grid.Row="3" Grid.Column="1" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Pólvora (gramas)" x:Name="QuantidadeUnitáriaDePolvora"/>
+                <Entry Grid.Row="4" Grid.Column="1" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Projétil" x:Name="QuantidadeUnitáriaDeProjetil"/>
+                <Entry Grid.Row="5" Grid.Column="1" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Outros" x:Name="QuantidadeUnitáriaDeOutros"/>
 
-        </Grid>
+                <Entry Grid.Row="1" Grid.Column="2" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$" x:Name="ValorPorRecargaEspoleta"/>
+                <Entry Grid.Row="2" Grid.Column="2" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$" x:Name="ValorPorRecargaEstojo"/>
+                <Entry Grid.Row="3" Grid.Column="2" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$" x:Name="ValorPorRecargaPolvora"/>
+                <Entry Grid.Row="4" Grid.Column="2" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$" x:Name="ValorPorRecargaProjetil"/>
+                <Entry Grid.Row="5" Grid.Column="2" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsEnabled="False" Placeholder="R$" x:Name="ValorPorRecargaOutros"/>
 
-    </StackLayout>
-    
+            </Grid>
+
+            <StackLayout Orientation="Horizontal" Margin="0,20,0,0" HorizontalOptions="Center">
+                <Button Text="Calcular" BackgroundColor="Green" Clicked="ButtonCalcular_Clicked"/>
+                <Button Text="Limpar Campos" BackgroundColor="Red" Clicked="ButtonLimparCampos_Clicked"/>
+            </StackLayout>
+
+            <Label Text="Valor Total por Recarga:" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontAttributes="Bold" FontSize="Title" Margin="0,20,0,0" />
+            <Label Text="R$ 0.00" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontAttributes="Bold" FontSize="50" x:Name="ValorPorRecargarLabel"/>
+
+        </StackLayout>
+
+    </ScrollView>
+
 </ContentPage>
