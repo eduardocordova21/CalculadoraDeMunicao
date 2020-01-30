@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace CalculadoraDeMunicao.Droid
 {
-    [Activity(Label = "PrintWayy Devices", Theme = "@style/SplashScreenTheme", MainLauncher = true, NoHistory = true)]
+    [Activity(Label = "Calculadora de Munição", Theme = "@style/SplashScreenTheme", MainLauncher = true, NoHistory = true)]
     public class SplashScreenActivity : AppCompatActivity
     {
         public override void OnCreate(Bundle savedInstanceState, PersistableBundle persistableBundle)
