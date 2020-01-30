@@ -7,7 +7,7 @@
              Visual="Material">
 
     <NavigationPage.TitleView>
-        <Label Text="{Binding Title}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Title"/>
+        <Label Text="{Binding Title}" Style="{StaticResource TituloDaPagina}"/>
     </NavigationPage.TitleView>
 
     <StackLayout Margin="15">
@@ -29,27 +29,27 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Label Text="Descrição" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
-            <Label Text="Quantidade Total" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
-            <Label Text="Valor Total" Grid.Row="0" Grid.Column="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="LightGray"/>
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource TituloDasColunas}" Text="Descrição"/>
+            <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource TituloDasColunas}" Text="Quantidade Total"/>
+            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource TituloDasColunas}" Text="Valor Total"/>
 
-            <Label Text="Espoleta:" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Title" TextColor="Black"/>
-            <Label Text="Estojo:" Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Title" TextColor="Black"/>
-            <Label Text="Pólvora (gramas):" Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Title" TextColor="Black"/>
-            <Label Text="Projétil:" Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Title" TextColor="Black"/>
-            <Label Text="Outros:" Grid.Row="5" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontSize="Title" TextColor="Black"/>
+            <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelDeDescriçãoDasColunas}" Text="Espoleta:"/>
+            <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelDeDescriçãoDasColunas}" Text="Estojo:"/>
+            <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelDeDescriçãoDasColunas}" Text="Pólvora (gramas):"/>
+            <Label Grid.Row="4" Grid.Column="0" Style="{StaticResource LabelDeDescriçãoDasColunas}" Text="Projétil:"/>
+            <Label Grid.Row="5" Grid.Column="0" Style="{StaticResource LabelDeDescriçãoDasColunas}" Text="Outros:"/>
 
-            <Entry Grid.Row="1" Grid.Column="1" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Quantidade" x:Name="QuantidadeTotalDeEspoleta"/>
-            <Entry Grid.Row="2" Grid.Column="1" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Quantidade" x:Name="QuantidadeTotalDeEstojo"/>
-            <Entry Grid.Row="3" Grid.Column="1" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Quantidade" x:Name="QuantidadeTotalDePolvora"/>
-            <Entry Grid.Row="4" Grid.Column="1" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Quantidade" x:Name="QuantidadeTotalDeProjetil"/>
-            <Entry Grid.Row="5" Grid.Column="1" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="Quantidade" x:Name="QuantidadeTotalDeOutros"/>
+            <Entry Grid.Row="1" Grid.Column="1" Style="{StaticResource EntradasDeTextoQuantidadeTotal}" x:Name="QuantidadeTotalDeEspoleta"/>
+            <Entry Grid.Row="2" Grid.Column="1" Style="{StaticResource EntradasDeTextoQuantidadeTotal}" x:Name="QuantidadeTotalDeEstojo"/>
+            <Entry Grid.Row="3" Grid.Column="1" Style="{StaticResource EntradasDeTextoQuantidadeTotal}" x:Name="QuantidadeTotalDePolvora"/>
+            <Entry Grid.Row="4" Grid.Column="1" Style="{StaticResource EntradasDeTextoQuantidadeTotal}" x:Name="QuantidadeTotalDeProjetil"/>
+            <Entry Grid.Row="5" Grid.Column="1" Style="{StaticResource EntradasDeTextoQuantidadeTotal}" x:Name="QuantidadeTotalDeOutros"/>
 
-            <Entry Grid.Row="1" Grid.Column="2" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="R$" x:Name="ValorTotalDeEspoleta"/>
-            <Entry Grid.Row="2" Grid.Column="2" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="R$" x:Name="ValorTotalDeEstojo"/>
-            <Entry Grid.Row="3" Grid.Column="2" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="R$" x:Name="ValorTotalDePolvora"/>
-            <Entry Grid.Row="4" Grid.Column="2" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="R$" x:Name="ValorTotalDeProjetil"/>
-            <Entry Grid.Row="5" Grid.Column="2" Keyboard="Default" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ClearButtonVisibility="WhileEditing" Placeholder="R$" x:Name="ValorTotalDeOutros"/>
+            <Entry Grid.Row="1" Grid.Column="2" Style="{StaticResource EntradasDeTextoValorTotal}" x:Name="ValorTotalDeEspoleta"/>
+            <Entry Grid.Row="2" Grid.Column="2" Style="{StaticResource EntradasDeTextoValorTotal}" x:Name="ValorTotalDeEstojo"/>
+            <Entry Grid.Row="3" Grid.Column="2" Style="{StaticResource EntradasDeTextoValorTotal}" x:Name="ValorTotalDePolvora"/>
+            <Entry Grid.Row="4" Grid.Column="2" Style="{StaticResource EntradasDeTextoValorTotal}" x:Name="ValorTotalDeProjetil"/>
+            <Entry Grid.Row="5" Grid.Column="2" Style="{StaticResource EntradasDeTextoValorTotal}" x:Name="ValorTotalDeOutros"/>
 
         </Grid>
 

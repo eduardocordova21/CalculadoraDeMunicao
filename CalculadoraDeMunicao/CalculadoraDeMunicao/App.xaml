@@ -3,9 +3,60 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.DryIoc;assembly=Prism.DryIoc.Forms"
              x:Class="CalculadoraDeMunicao.App">
-	<Application.Resources>
+    <Application.Resources>
 
-		<!-- Application resource dictionary -->
+        <!--Estilos das Labels-->
 
-	</Application.Resources>
+        <Style x:Key="Labels" TargetType="Label">
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="TituloDaPagina" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="Title"/>
+        </Style>
+
+        <Style x:Key="TituloDasColunas" TargetType="Label" BasedOn="{StaticResource Labels}">
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="BackgroundColor" Value="LightGray"/>
+        </Style>
+
+        <Style x:Key="LabelDeResultado" TargetType="Label" BasedOn="{StaticResource Labels}">
+            <Setter Property="FontSize" Value="Title"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+
+        <Style x:Key="LabelDeDescriçãoDasColunas" TargetType="Label" BasedOn="{StaticResource Labels}">
+            <Setter Property="FontSize" Value="Title"/>
+        </Style>
+
+        <!--Estilos das Entradas de Texto-->
+
+        <Style x:Key="EntradaDeTexto" TargetType="Entry">
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="Keyboard" Value="Numeric"/>
+            <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+        </Style>
+
+        <Style x:Key="EntradasDeTextoParaValoresUnitarios" TargetType="Entry" BasedOn="{StaticResource EntradaDeTexto}">
+            <Setter Property="IsEnabled" Value="False"/>
+            <Setter Property="Placeholder" Value="R$"/>
+        </Style>
+
+        <Style x:Key="EntradasDeTextoQuantidadeTotal" TargetType="Entry" BasedOn="{StaticResource EntradaDeTexto}">
+            <Setter Property="Placeholder" Value="Quantidade"/>
+        </Style>
+
+        <Style x:Key="EntradasDeTextoValorTotal" TargetType="Entry" BasedOn="{StaticResource EntradaDeTexto}">
+            <Setter Property="Placeholder" Value="R$"/>
+        </Style>
+
+    </Application.Resources>
 </prism:PrismApplication>
