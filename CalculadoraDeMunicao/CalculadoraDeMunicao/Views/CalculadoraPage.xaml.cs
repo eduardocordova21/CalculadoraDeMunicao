@@ -37,11 +37,29 @@ namespace CalculadoraDeMunicao.Views
         {
             try
             {
-                double valorPorRecargaEspoleta = Math.Round(double.Parse(ValorUnitarioDeEspoletaEntry.Text) * int.Parse(QuantidadeUnitáriaDeEspoleta.Text), 2);
-                double valorPorRecargaEstojo = Math.Round((double.Parse(ValorUnitarioDeEstojosEntry.Text) * int.Parse(QuantidadeUnitáriaDeEstojo.Text) / 100), 2);
-                double valorPorRecargaPolvora = Math.Round(double.Parse(ValorUnitarioDePolvoraEntry.Text) * double.Parse(QuantidadeUnitáriaDePolvora.Text), 2);
-                double valorPorRecargaProjetil = Math.Round(double.Parse(ValorUnitarioDeProjetilEntry.Text) * int.Parse(QuantidadeUnitáriaDeProjetil.Text), 2);
-                double valorPorRecargaOutros = Math.Round(double.Parse(ValorUnitarioDeOutrosEntry.Text) * double.Parse(QuantidadeUnitáriaDeOutros.Text), 2);
+                // Pegando os valores dos campos de Valor Unitário
+                double valorUnitarioDeEspoleta = double.Parse(ValorUnitarioDeEspoletaEntry.Text);
+                double valorUnitarioDeEstojos = double.Parse(ValorUnitarioDeEstojosEntry.Text);
+                double valorUnitarioDePolvora = double.Parse(ValorUnitarioDePolvoraEntry.Text);
+                double valorUnitarioDeProjetil = double.Parse(ValorUnitarioDeProjetilEntry.Text);
+                double valorUnitarioDeOutros = double.Parse(ValorUnitarioDeOutrosEntry.Text);
+
+                // Pegando os valores dos campos de Quantidade Unitária
+                int quantidadeUnitáriaDeEspoleta = int.Parse(QuantidadeUnitáriaDeEspoleta.Text);
+                int quantidadeUnitáriaDeEstojo = int.Parse(QuantidadeUnitáriaDeEstojo.Text);
+                double quantidadeUnitáriaDePolvora = double.Parse(QuantidadeUnitáriaDePolvora.Text);
+                int quantidadeUnitáriaDeProjetil = int.Parse(QuantidadeUnitáriaDeProjetil.Text);
+
+                // Fazendo a soma das Quantidades Unitárias para conseguir a Quantidade Unitária de Outros 
+                double quantidadeTotalDeOutros = quantidadeUnitáriaDeEspoleta + quantidadeUnitáriaDeEstojo + quantidadeUnitáriaDePolvora + quantidadeUnitáriaDeProjetil;
+                QuantidadeUnitáriaDeOutros.Text = quantidadeTotalDeOutros.ToString();
+
+                // Calculando o Valor por Recarga de cada campo
+                double valorPorRecargaEspoleta = Math.Round(valorUnitarioDeEspoleta * quantidadeUnitáriaDeEspoleta, 4);
+                double valorPorRecargaEstojo = Math.Round(valorUnitarioDeEstojos / quantidadeUnitáriaDeEstojo, 4);
+                double valorPorRecargaPolvora = Math.Round(valorUnitarioDePolvora * quantidadeUnitáriaDePolvora, 4);
+                double valorPorRecargaProjetil = Math.Round(valorUnitarioDeProjetil * quantidadeUnitáriaDeProjetil, 4);
+                double valorPorRecargaOutros = Math.Round(valorUnitarioDeOutros * quantidadeTotalDeOutros, 4);
 
                 double valorTotalPorRecarga = valorPorRecargaEspoleta + valorPorRecargaEstojo + valorPorRecargaPolvora + valorPorRecargaProjetil + valorPorRecargaOutros;
 
@@ -75,11 +93,11 @@ namespace CalculadoraDeMunicao.Views
                 Espoleta projetilObject = JsonConvert.DeserializeObject<Espoleta>(projetil);
                 Espoleta outrosObject = JsonConvert.DeserializeObject<Espoleta>(outros);
 
-                ValorUnitarioDeEspoletaEntry.Text = Math.Round(espoletaObject.ValorUnitário, 2).ToString();
-                ValorUnitarioDeEstojosEntry.Text = Math.Round(estojoObject.ValorUnitário, 2).ToString();
-                ValorUnitarioDePolvoraEntry.Text = Math.Round((polvoraObject.ValorUnitário / 10), 2).ToString();
-                ValorUnitarioDeProjetilEntry.Text = Math.Round(projetilObject.ValorUnitário, 2).ToString();
-                ValorUnitarioDeOutrosEntry.Text = Math.Round(outrosObject.ValorUnitário, 2).ToString();
+                ValorUnitarioDeEspoletaEntry.Text = Math.Round(espoletaObject.ValorUnitário, 4).ToString();
+                ValorUnitarioDeEstojosEntry.Text = Math.Round(estojoObject.ValorUnitário, 4).ToString();
+                ValorUnitarioDePolvoraEntry.Text = Math.Round((polvoraObject.ValorUnitário / 10), 4).ToString();
+                ValorUnitarioDeProjetilEntry.Text = Math.Round(projetilObject.ValorUnitário, 4).ToString();
+                ValorUnitarioDeOutrosEntry.Text = Math.Round(outrosObject.ValorUnitário, 4).ToString();
             }
             catch (Exception)
             {

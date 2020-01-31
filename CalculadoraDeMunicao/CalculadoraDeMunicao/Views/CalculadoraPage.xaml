@@ -43,9 +43,9 @@
 
                 <Entry Grid.Row="1" Grid.Column="1" Style="{StaticResource EntradaDeTexto}" Placeholder="Espoleta" x:Name="QuantidadeUnitáriaDeEspoleta"/>
                 <Entry Grid.Row="2" Grid.Column="1" Style="{StaticResource EntradaDeTexto}" Placeholder="Estojo" x:Name="QuantidadeUnitáriaDeEstojo"/>
-                <Entry Grid.Row="3" Grid.Column="1" Style="{StaticResource EntradaDeTexto}" Placeholder="Pólvora (gramas)" x:Name="QuantidadeUnitáriaDePolvora"/>
+                <Entry Grid.Row="3" Grid.Column="1" Style="{StaticResource EntradaDeTexto}" Placeholder="Pólvora (Grains)" x:Name="QuantidadeUnitáriaDePolvora"/>
                 <Entry Grid.Row="4" Grid.Column="1" Style="{StaticResource EntradaDeTexto}" Placeholder="Projétil" x:Name="QuantidadeUnitáriaDeProjetil"/>
-                <Entry Grid.Row="5" Grid.Column="1" Style="{StaticResource EntradaDeTexto}" Placeholder="Outros" x:Name="QuantidadeUnitáriaDeOutros"/>
+                <Entry Grid.Row="5" Grid.Column="1" Style="{StaticResource EntradaDeTexto}" Placeholder="Outros" x:Name="QuantidadeUnitáriaDeOutros" IsEnabled="False"/>
 
                 <Entry Grid.Row="1" Grid.Column="2" Style="{StaticResource EntradasDeTextoParaValoresUnitarios}" x:Name="ValorPorRecargaEspoleta"/>
                 <Entry Grid.Row="2" Grid.Column="2" Style="{StaticResource EntradasDeTextoParaValoresUnitarios}" x:Name="ValorPorRecargaEstojo"/>

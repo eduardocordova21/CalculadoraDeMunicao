@@ -10,6 +10,6 @@ namespace CalculadoraDeMunicao.Models
 
         public double ValorTotal { get; set; }
 
-        public double ValorUnitário { get { return Math.Round(ValorTotal / QuantidadeTotal, 2); } }
+        public double ValorUnitário { get { return Math.Round(ValorTotal / QuantidadeTotal, 4); } }
     }
 }
