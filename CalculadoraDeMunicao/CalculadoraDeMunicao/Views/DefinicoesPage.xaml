@@ -35,7 +35,7 @@
 
             <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelDeDescriçãoDasColunas}" Text="Espoleta:"/>
             <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelDeDescriçãoDasColunas}" Text="Estojo:"/>
-            <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelDeDescriçãoDasColunas}" Text="Pólvora (gramas):"/>
+            <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelDeDescriçãoDasColunas}" Text="Pólvora (Grains):"/>
             <Label Grid.Row="4" Grid.Column="0" Style="{StaticResource LabelDeDescriçãoDasColunas}" Text="Projétil:"/>
             <Label Grid.Row="5" Grid.Column="0" Style="{StaticResource LabelDeDescriçãoDasColunas}" Text="Outros:"/>
 
