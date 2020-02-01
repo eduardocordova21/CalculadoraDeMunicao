@@ -69,7 +69,7 @@ namespace CalculadoraDeMunicao.Views
                 ValorPorRecargaProjetil.Text = valorPorRecargaProjetil.ToString();
                 ValorPorRecargaOutros.Text = valorPorRecargaOutros.ToString();
 
-                ValorPorRecargarLabel.Text = "R$ " + valorTotalPorRecarga;
+                ValorPorRecargarLabel.Text = "R$ " + Math.Round(valorTotalPorRecarga, 2);
             }
             catch (Exception)
             {
@@ -95,7 +95,7 @@ namespace CalculadoraDeMunicao.Views
 
                 ValorUnitarioDeEspoletaEntry.Text = Math.Round(espoletaObject.ValorUnitário, 4).ToString();
                 ValorUnitarioDeEstojosEntry.Text = Math.Round(estojoObject.ValorUnitário, 4).ToString();
-                ValorUnitarioDePolvoraEntry.Text = Math.Round((polvoraObject.ValorUnitário / 10), 4).ToString();
+                ValorUnitarioDePolvoraEntry.Text = Math.Round((polvoraObject.ValorUnitário / 15.4324), 4).ToString();
                 ValorUnitarioDeProjetilEntry.Text = Math.Round(projetilObject.ValorUnitário, 4).ToString();
                 ValorUnitarioDeOutrosEntry.Text = Math.Round(outrosObject.ValorUnitário, 4).ToString();
             }

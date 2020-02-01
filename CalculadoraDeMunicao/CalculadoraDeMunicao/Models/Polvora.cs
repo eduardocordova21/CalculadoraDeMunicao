@@ -7,6 +7,6 @@ namespace CalculadoraDeMunicao.Models
 {
     public class Polvora : AbstractMunicao
     {
- 
+
     }
 }
