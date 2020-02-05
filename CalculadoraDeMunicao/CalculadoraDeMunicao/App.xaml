@@ -45,6 +45,10 @@
             <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
         </Style>
 
+        <Style x:Key="EntradaDeTextoParaPolvoraEmGrains" TargetType="Entry" BasedOn="{StaticResource EntradaDeTexto}">
+            <Setter Property="Keyboard" Value="Default"/>
+        </Style>
+
         <Style x:Key="EntradasDeTextoParaValoresUnitarios" TargetType="Entry" BasedOn="{StaticResource EntradaDeTexto}">
             <Setter Property="IsEnabled" Value="False"/>
             <Setter Property="Placeholder" Value="R$"/>
